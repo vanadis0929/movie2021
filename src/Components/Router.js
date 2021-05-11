@@ -1,5 +1,12 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch,
+} from "react-router-dom";
+
+import Header from "Components/Header";
 
 import Home from "Routes/Home";
 import Detail from "Routes/Detail";
@@ -9,6 +16,7 @@ import TV from "Routes/TV";
 export default () => {
     return (
         <Router>
+            <Header />
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/detail" exact component={Detail} />
@@ -18,5 +26,5 @@ export default () => {
                 <Redirect from="*" to="/" />
             </Switch>
         </Router>
-    )
-}
+    );
+};
