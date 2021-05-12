@@ -1,59 +1,59 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 
-import React from "react";
-
 import { Link, withRouter } from "react-router-dom";
 
-import { jsx, css } from "@emotion/react";
+import { jsx } from "@emotion/react";
+import styled from "@emotion/styled";
 
-const HeaderDiv = css`
+const Header = styled.header`
     position: sticky;
     left: 0;
     top: 0;
 `;
 
-const List = css`
+const List = styled.ul`
     display: flex;
     align-items: center;
     text-align: center;
     padding: 0 20px;
+`;
 
-    > li {
-        flex: 0 0 auto;
-        margin-right: 20px;
+const Item = styled.li`
+    flex: 0 0 auto;
+    margin-right: 20px;
+    color: #fff;
+    border-bottom: 5px solid
+        ${(props) => (props.active ? "#f00" : "transparent")};
+    transition: all 0.5s;
+    font-size: ${(props) => (props.active ? "120%" : "")};
+`;
+
+const ItemLink = styled(Link)`
+    display: block;
+    padding: 5px 10px;
+
+    &:hover {
+        background-color: #00f;
         color: #fff;
-
-        > a {
-            display: block;
-            padding: 5px 10px;
-            border-bottom: 5px solid
-                ${(props) => (props.current ? "#f00" : "transparent")};
-
-            :hover {
-                background-color: #00f;
-                color: #fff;
-            }
-        }
     }
 `;
 
-const Header = (props) => (
-    <header css={HeaderDiv}>
+export default withRouter(({ location: { pathname } }) => (
+    <Header>
+        {console.log(pathname)}
         <nav>
-            <ul css={List}>
-                <li current={false}>
-                    <Link to="/">Movies</Link>
-                </li>
-                <li current={true}>
-                    <Link to="/tv">TV</Link>
-                </li>
-                <li current={false}>
-                    <Link to="/search">Search</Link>
-                </li>
-            </ul>
+            <List>
+                <Item active={pathname === "/"}>
+                    <ItemLink to="/">Movies</ItemLink>
+                </Item>
+                <Item active={pathname === "/tv"}>
+                    <ItemLink to="/tv">TV</ItemLink>
+                </Item>
+                <Item active={pathname === "/search"}>
+                    <ItemLink to="/search">Search</ItemLink>
+                </Item>
+            </List>
         </nav>
-    </header>
-);
-
-export default withRouter(Header);
+    </Header>
+));
