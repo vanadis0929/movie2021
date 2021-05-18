@@ -15,10 +15,20 @@ export const moviesApi = {
   nowPlaying: () => api.get("movie/now_playing"),
   upcoming: () => api.get("movie/upcoming"),
   popular: () => api.get("movie/popular"),
+  movieDetail: id => api.get(`movie/${id}`), {
+    params: {
+      append_to_response:  "video, image"
+    }
+  }
 };
 
 export const tvApi = {
   nowPlaying: () => api.get("tv/nowplaying"),
   topRated: () => api.get("tv/top_rated"),
   airingToday: () => api.get("tv/popular"),
+ showDetail: id => api.get(`tv/${id}`), {
+    params: {
+      append_to_response:  "image"
+    }
+  }  
 };
