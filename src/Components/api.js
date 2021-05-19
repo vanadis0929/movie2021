@@ -1,4 +1,3 @@
-import { ApiOutlined } from "@ant-design/icons";
 import axios from "axios";
 
 const api = axios.create({
@@ -9,7 +8,7 @@ const api = axios.create({
     },
 });
 
-//api.get("tv/popular");
+api.get("tv/popular");
 
 export const moviesApi = {
     nowPlaying: () => api.get("movie/now_playing"),
