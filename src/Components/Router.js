@@ -19,10 +19,11 @@ export default () => {
             <Header />
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/detail" exact component={Detail} />
-                <Route path="/search" exact component={Search} />
+                <Route path="/search" component={Search} />
+                <Route path="/movie/:id" component={Detail} />
+                <Route path="/show/:id" component={Detail} />
                 <Route path="/tv" exact component={TV} />
-                <Route path="/tv/popular" render={() => <h1>popular</h1>} />
+
                 <Redirect from="*" to="/" />
             </Switch>
         </Router>
