@@ -1,4 +1,4 @@
-import { moviesApi, tvApi } from "Components/api";
+import { movieApi, tvApi } from "Components/api";
 import React from "react";
 
 import SearchPresenter from "./SearchPresenter";
@@ -27,7 +27,7 @@ export default class extends React.Component {
         try {
             const {
                 data: { results: movieResults },
-            } = await moviesApi.search(searchTerm);
+            } = await movieApi.search(searchTerm);
             const {
                 data: { results: tvResults },
             } = await tvApi.search(searchTerm);

@@ -1,4 +1,4 @@
-import { moviesApi } from "Components/api";
+import { movieApi } from "Components/api";
 import React from "react";
 import HomePresenter from "./HomePresenter";
 
@@ -15,13 +15,13 @@ export default class extends React.Component {
         try {
             const {
                 data: { results: nowPlaying },
-            } = await moviesApi.nowPlaying();
+            } = await movieApi.nowPlaying();
             const {
                 data: { results: upcoming },
-            } = await moviesApi.upcoming();
+            } = await movieApi.upcoming();
             const {
                 data: { results: popular },
-            } = await moviesApi.popular();
+            } = await movieApi.popular();
 
             this.setState({
                 nowPlaying,
