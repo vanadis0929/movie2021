@@ -6,7 +6,7 @@ const DetailPresenter = ({ result, loading, error }) => {
     return "TV";
 };
 
-DetailPresenter.Proptypes = {
+DetailPresenter.propTypes = {
     result: Proptypes.object,
     loading: Proptypes.bool.isRequired,
     error: Proptypes.string,
