@@ -19,13 +19,15 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
             {nowPlaying && nowPlaying.length > 0 && (
                 <Section title="Now Playing">
                     {nowPlaying.map((movie) => (
-                        // <span key={movie.id}>{movie.title}</span>
                         <Poster
                             key={movie.id}
                             id={movie.id}
                             title={movie.title}
                             imageUrl={movie.poster_path}
-                            year={movie.release_date}
+                            year={
+                                movie.release_date &&
+                                movie.release_date.substring(0, 4)
+                            }
                             rating={movie.vote_average}
                         ></Poster>
                     ))}
@@ -35,13 +37,15 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
             {upcoming && upcoming.length > 0 && (
                 <Section title="Upcoming">
                     {upcoming.map((movie) => (
-                        // <span key={movie.id}>{movie.title}</span>
                         <Poster
                             key={movie.id}
                             id={movie.id}
                             title={movie.title}
-                            bgUrl={movie.poster_path}
-                            year={movie.release_date}
+                            imageUrl={movie.poster_path}
+                            year={
+                                movie.release_date &&
+                                movie.release_date.substring(0, 4)
+                            }
                             rating={movie.vote_average}
                         ></Poster>
                     ))}
@@ -51,13 +55,15 @@ const HomePresenter = ({ nowPlaying, popular, upcoming, loading, error }) =>
             {popular && popular.length > 0 && (
                 <Section title="Popular">
                     {popular.map((movie) => (
-                        // <span key={movie.id}>{movie.title}</span>
                         <Poster
                             key={movie.id}
                             id={movie.id}
                             title={movie.title}
-                            bgUrl={movie.poster_path}
-                            year={movie.release_date}
+                            imageUrl={movie.poster_path}
+                            year={
+                                movie.release_date &&
+                                movie.release_date.substring(0, 4)
+                            }
                             rating={movie.vote_average}
                         ></Poster>
                     ))}
