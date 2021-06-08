@@ -10,7 +10,7 @@
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^13.1.9",
         "@types/antd": "^1.0.0",
-        "antd": "^4.16.1",
+        "antd": "^4.16.2",
         "axios": "^0.21.1",
         "emotion-reset": "^3.0.0",
         "prop-types": "^15.7.2",
