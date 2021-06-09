@@ -63,14 +63,35 @@ const Title = styled.h4`
 
 const Year = styled.time``;
 
-const Poster = ({ id, imageUrl, title, rating, year, isMovie }) => {
+const Overview = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 10px 10px 0 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+
+  ${ImageFigure}:hover & {
+    opacity: 1;
+  }
+`;
+
+const Poster = ({ id, imageUrl, title, rating, year, overview, isMovie }) => {
   return (
     <Container>
       <DetailLink to={isMovie ? `/movie/${id}` : `/show/${id}`}>
         <ImageContainer>
           <ImageFigure>
             <Image
-              alt=""
+              alt={`${title}의 포스터 이미지`}
               src={`https://image.tmdb.org/t/p/w500${imageUrl}`}></Image>
             <Rating>
               <span role="img" aria-label="rating">
@@ -78,6 +99,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie }) => {
               </span>
               {rating}/10
             </Rating>
+            <Overview>{overview}</Overview>
           </ImageFigure>
           <Title>{title}</Title>
           <Year>{year}</Year>
@@ -93,6 +115,7 @@ Poster.propTypes = {
   title: PropTypes.string.isRequired,
   rating: PropTypes.number,
   year: PropTypes.string,
+  overview: PropTypes.string,
   isMovie: PropTypes.bool,
 };
 
