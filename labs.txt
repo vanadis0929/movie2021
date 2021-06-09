@@ -1,0 +1,41 @@
+
+이모지 정규식 (한글 안걸림)
+/([\u2700-\u27BF]|[\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2011-\u26FF]|\uD83E[\uDD10-\uDDFF])/g;
+
+
+https://mydevice.io
+
+폰의 실제 width / height를 알 수 있는 사이트
+
+css mask
+[https://css-tricks.com/clipping-masking-css/](https://css-tricks.com/clipping-masking-css/)
+
+[search-engine-optimization-starter-guide-ko.pdf](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e83966fb-866c-4419-a88c-eb554af80fe4/search-engine-optimization-starter-guide-ko.pdf)
+
+[https://support.google.com/webmasters/topic/9456575?hl=ko&ref_topic=9428048](https://support.google.com/webmasters/topic/9456575?hl=ko&ref_topic=9428048)
+
+다국어 seo 설정
+
+[https://support.google.com/webmasters/answer/182192?hl=ko](https://support.google.com/webmasters/answer/182192?hl=ko)
+
+
+
+
+[https://tools.woolyss.com/html5-audio-video-tester/?m=audio/](https://tools.woolyss.com/html5-audio-video-tester/?m=audio/x-m4a)
+
+오디오 비디오 샘플 파일도 받을 수 있고 media 타입도 알려줍니다.
+
+
+
+
+크롬에서 autocomplete="off"가 동작하지 않는다고 합니다.
+
+autocomplete="new-password" 로 해결 가능
+
+[https://chanspark.github.io/2017/07/13/크롬-자동완성-기능-제거하기.html](https://chanspark.github.io/2017/07/13/%ED%81%AC%EB%A1%AC-%EC%9E%90%EB%8F%99%EC%99%84%EC%84%B1-%EA%B8%B0%EB%8A%A5-%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.html)
+
+[https://www.notion.so/newin/3fce1587ba714445abd473a262b1626b](https://www.notion.so/newin/3fce1587ba714445abd473a262b1626b) 과 관련 있는 이슈입니다
+
+추가:
+
+브라우저 내에 계정이 저장되어 있는 경우(chrome://settings/passwords 에 해당 도메인)는 자동완성을 꺼도 자동으로 채우지는 않지만 저장된 목록을 불러옵니다.x
