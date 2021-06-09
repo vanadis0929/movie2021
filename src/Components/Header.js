@@ -1,12 +1,8 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-
 // import NavMenu from "Components/NavMenu";
 
 import { Link, withRouter } from "react-router-dom";
 
-import { jsx } from "@emotion/react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 const Header = styled.header`
   position: sticky;

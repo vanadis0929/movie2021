@@ -1,39 +1,29 @@
-import emotionReset from "emotion-reset";
-import { Global, css } from "@emotion/react";
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
-const GlobalStyle = css`
-    ${emotionReset}
-    body {
-        font-family: "Noto Sans KR", sans-serif;
-        line-height: 1.4;
-        font-size: 16px;
-        color: #fff;
-        background-color: rgba(20, 20, 20, 1);
-    }
-    * {
-        box-sizing: border-box;
-    }
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-    table {
-        width: 100%;
-    }
-    img {
-        max-width: 100%;
-        vertical-align: top;
-    }
+const GlobalStyles = createGlobalStyle`
+  ${reset}
+  body {
+    font-family: "Noto Sans KR", sans-serif;
+    line-height: 1.4;
+    font-size: 16px;
+    color: #fff;
+    background-color: rgba(20, 20, 20, 1);
+  }
+  * {
+    box-sizing: border-box;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  table {
+    width: 100%;
+  }
+  img {
+    max-width: 100%;
+    vertical-align: top;
+  }
 `;
-
-function GlobalStyles() {
-    return (
-        <Global
-            styles={css`
-                ${GlobalStyle}
-            `}
-        />
-    );
-}
 
 export default GlobalStyles;

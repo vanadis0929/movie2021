@@ -1,6 +1,6 @@
 import React from "react";
 import Proptypes from "prop-types";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import Poster from "Components/Poster";
 
 const DetailPresenter = ({ result, loading, error }) => {

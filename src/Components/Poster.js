@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Container = styled.div``;
@@ -18,10 +18,26 @@ const ImageFigure = styled.figure`
   transition: all 0.5s;
   position: relative;
   margin-bottom: 10px;
-`;
 
-const Image = styled.img`
-  opacity: 1;
+  :before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    :before {
+      background-color: rgba(0, 0, 0, 0.8);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 `;
 
 const Rating = styled.div`
@@ -30,9 +46,14 @@ const Rating = styled.div`
   bottom: 15px;
   opacity: 0;
   transition: all 0.5s;
+
   ${ImageFigure}:hover & {
     opacity: 1;
   }
+`;
+
+const Image = styled.img`
+  opacity: 1;
 `;
 
 const Title = styled.h4`
